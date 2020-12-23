@@ -36,7 +36,7 @@ public class GUI implements ActionListener{
 
     public GUI() {
         frame = new JFrame();
-        frame.setBackground(Color.pink);
+        ///frame.setBackground(Color.pink);
 
         showAnime = new JButton("Show Anime");
         showDrama = new JButton("Show Dramas");
@@ -80,7 +80,7 @@ public class GUI implements ActionListener{
         frame.setVisible(false);
 
         frame = new JFrame();
-        frame.setBackground(Color.pink);
+        //frame.setBackground(Color.pink);
 
 
         label = new JLabel("Title: ");
@@ -122,7 +122,7 @@ public class GUI implements ActionListener{
         frame.setVisible(false);
 
         frame = new JFrame();
-        frame.setBackground(Color.pink);
+        //frame.setBackground(Color.pink);
 
 
         label = new JLabel("Title: ");
@@ -170,7 +170,7 @@ public class GUI implements ActionListener{
 
             frame.setVisible(false);
             frame = new JFrame();
-            frame.setBackground(Color.pink);
+            //frame.setBackground(Color.pink);
 
             label = new JLabel("Watched Anime List: ");
             JList l = new JList(animelist.toArray());
@@ -196,7 +196,7 @@ public class GUI implements ActionListener{
         else if (e.getSource() == showDrama) {
             frame.setVisible(false);
             frame = new JFrame();
-            frame.setBackground(Color.pink);
+            //frame.setBackground(Color.pink);
 
             label = new JLabel("Watched Drama List: ");
             JList l = new JList(dramalist.toArray());
