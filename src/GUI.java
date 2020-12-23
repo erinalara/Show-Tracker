@@ -1,21 +1,40 @@
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.BorderFactory;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class GUI {
+public class GUI implements ActionListener{
+
+    private int count = 0;
+    private JFrame frame;
+    private JPanel panel;
+    private JLabel label;
 
     public GUI() {
-        JFrame frame = new JFrame();
+        frame = new JFrame();
+        JButton anime_menu = new JButton("Anime");
+        JButton drama_menu = new JButton("Dramas");
+        anime_menu.addActionListener(this);
 
-        JPanel panel = new JPanel();
+        label = new JLabel("Clicked");
+
+        panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(30,30,10,30));
         panel.setLayout(new GridLayout(0,1));
+        panel.add(anime_menu);
+        panel.add(drama_menu);
+        panel.add(label);
 
         frame.add(panel, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Anime/Drama Log");
         frame.pack();
         frame.setVisible(true);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        count++;
+        label.setText("Clicked: " + count);
     }
 }
