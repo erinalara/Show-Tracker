@@ -42,7 +42,7 @@ public class Anime {
 
     @Override
     public String toString() {
-        return "Title: " + name + "\nGenre: " + genre + "\nYear: " + year;
+                return name + "    |   " + genre + "   |   " + year;
     }
 
 }

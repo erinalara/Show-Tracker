@@ -36,6 +36,8 @@ public class GUI implements ActionListener{
 
     public GUI() {
         frame = new JFrame();
+        frame.setBackground(Color.pink);
+
         showAnime = new JButton("Show Anime");
         showDrama = new JButton("Show Dramas");
         addAnime = new JButton("Add Anime");
@@ -46,7 +48,7 @@ public class GUI implements ActionListener{
         addAnime.addActionListener(this);
         addDrama.addActionListener(this);
 
-        String[] genres = {"Action", "Comedy", "Romance", "Slice of Life", "Thriller"};
+        String[] genres = {"Action", "Angst", "Fantasy", "Comedy", "Romance", "Slice of Life", "Sci-Fi", "Sports", "Thriller"};
         list = new JComboBox(genres);
 
         String[] languages = {"English", "Japanese", "Korean", "Taiwanese"};
@@ -78,6 +80,7 @@ public class GUI implements ActionListener{
         frame.setVisible(false);
 
         frame = new JFrame();
+        frame.setBackground(Color.pink);
 
 
         label = new JLabel("Title: ");
@@ -86,9 +89,8 @@ public class GUI implements ActionListener{
         JLabel spacer = new JLabel("");
         submitAnime = new JButton("Submit");
 
-        JTextField title = new JTextField();
-        JTextField year = new JTextField();
-        submitAnime.addActionListener(this);
+        title = new JTextField();
+        year = new JTextField();
 
         panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -103,6 +105,7 @@ public class GUI implements ActionListener{
         panel.add(year);
         panel.add(spacer);
         panel.add(submitAnime);
+        submitAnime.addActionListener(this);
 
         back.addActionListener(this);
         panel.add(back);
@@ -119,6 +122,7 @@ public class GUI implements ActionListener{
         frame.setVisible(false);
 
         frame = new JFrame();
+        frame.setBackground(Color.pink);
 
 
         label = new JLabel("Title: ");
@@ -128,8 +132,8 @@ public class GUI implements ActionListener{
         JLabel spacer = new JLabel("");
         submitDrama = new JButton("Submit");
 
-        JTextField title = new JTextField();
-        JTextField year = new JTextField();
+        title = new JTextField();
+        year = new JTextField();
         submitDrama.addActionListener(this);
 
         panel = new JPanel();
@@ -166,22 +170,23 @@ public class GUI implements ActionListener{
 
             frame.setVisible(false);
             frame = new JFrame();
+            frame.setBackground(Color.pink);
 
             label = new JLabel("Watched Anime List: ");
-
+            JList l = new JList(animelist.toArray());
 
             panel = new JPanel();
-            panel.setBorder(BorderFactory.createEmptyBorder(80, 100, 80, 100));
+            panel.setBorder(BorderFactory.createEmptyBorder(10, 50, 50, 50));
             panel.setLayout(new GridLayout(0, 1));
 
             panel.add(label);
-
+            panel.add(l);
             back.addActionListener(this);
             panel.add(back);
 
             frame.add(panel, BorderLayout.CENTER);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setTitle("Anime/Drama Log");
+            frame.setTitle("Showing Anime");
             frame.pack();
             frame.setLocationRelativeTo(null);
 
@@ -191,21 +196,22 @@ public class GUI implements ActionListener{
         else if (e.getSource() == showDrama) {
             frame.setVisible(false);
             frame = new JFrame();
+            frame.setBackground(Color.pink);
 
             label = new JLabel("Watched Drama List: ");
-
+            JList l = new JList(dramalist.toArray());
             panel = new JPanel();
-            panel.setBorder(BorderFactory.createEmptyBorder(80, 100, 80, 100));
+            panel.setBorder(BorderFactory.createEmptyBorder(10, 50, 50, 50));
             panel.setLayout(new GridLayout(0, 1));
 
             panel.add(label);
-
+            panel.add(l);
             back.addActionListener(this);
             panel.add(back);
 
             frame.add(panel, BorderLayout.CENTER);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setTitle("Anime/Drama Log");
+            frame.setTitle("Showing Dramas");
             frame.pack();
             frame.setLocationRelativeTo(null);
 
@@ -268,7 +274,7 @@ public class GUI implements ActionListener{
         }
         catch (FileNotFoundException fnf) {
 
-            System.out.println("File not found");
+            System.out.println("File not found ");
 
         }
 
@@ -317,7 +323,7 @@ public class GUI implements ActionListener{
         }
         catch (FileNotFoundException fnf) {
 
-            System.out.println("File not found");
+            System.out.println("File not found ");
 
         }
 

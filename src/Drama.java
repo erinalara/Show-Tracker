@@ -53,7 +53,7 @@ public class Drama {
 
     @Override
     public String toString() {
-        return "Title: " + name + "\nGenre: " + genre + "\nLanguage: " + language + "\nYear: " + year;
+        return name + "    |   " + genre + "   |   " + language + "    |   " + year;
     }
 
 }
