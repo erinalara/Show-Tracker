@@ -9,24 +9,35 @@ public class GUI implements ActionListener{
     private JFrame frame;
     private JPanel panel;
     private JLabel label;
+    private JButton showAnime;
+    private JButton showDrama;
+    private JButton addAnime;
+    private JButton addDrama;
+    private JButton back = new JButton("Return");
 
     public GUI() {
         frame = new JFrame();
-        JButton anime_menu = new JButton("Anime");
-        JButton drama_menu = new JButton("Dramas");
+        showAnime = new JButton("Show Anime");
+        showDrama = new JButton("Show Dramas");
+        addAnime = new JButton("Add Anime");
+        addDrama = new JButton("Add Dramas");
 
-        anime_menu.addActionListener(this);
-        drama_menu.addActionListener(this);
+        showAnime.addActionListener(this);
+        showDrama.addActionListener(this);
+        addAnime.addActionListener(this);
+        addDrama.addActionListener(this);
 
 
 
-        label = new JLabel("Clicked");
+        label = new JLabel("Erina Lara. 12/22/2020.");
 
         panel = new JPanel();
-        panel.setBorder(BorderFactory.createEmptyBorder(30,30,10,30));
+        panel.setBorder(BorderFactory.createEmptyBorder(100,100,100,100));
         panel.setLayout(new GridLayout(0,1));
-        panel.add(anime_menu);
-        panel.add(drama_menu);
+        panel.add(addAnime);
+        panel.add(addDrama);
+        panel.add(showAnime);
+        panel.add(showDrama);
         panel.add(label);
 
         frame.add(panel, BorderLayout.CENTER);
@@ -40,26 +51,99 @@ public class GUI implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        frame.setVisible(false);
-        frame = new JFrame();
-        JButton show = new JButton("Watched Anime");
-        JButton add = new JButton("Add an anime");
-        show.addActionListener(this);
+        if (e.getSource() == showAnime) {
+
+            frame.setVisible(false);
+            frame = new JFrame();
+
+            label = new JLabel("Watched Anime List: ");
 
 
-        label = new JLabel("Anime Section");
+            panel = new JPanel();
+            panel.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
+            panel.setLayout(new GridLayout(0, 1));
 
-        panel = new JPanel();
-        panel.setBorder(BorderFactory.createEmptyBorder(30,30,10,30));
-        panel.setLayout(new GridLayout(0,1));
-        panel.add(show);
-        panel.add(add);
-        panel.add(label);
+            panel.add(label);
 
-        frame.add(panel, BorderLayout.CENTER);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("Anime/Drama Log");
-        frame.pack();
-        frame.setVisible(true);
+            back.addActionListener(this);
+            panel.add(back);
+
+            frame.add(panel, BorderLayout.CENTER);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setTitle("Anime/Drama Log");
+            frame.pack();
+            frame.setVisible(true);
+        }
+
+        else if (e.getSource() == showDrama) {
+            frame.setVisible(false);
+            frame = new JFrame();
+
+            label = new JLabel("Watched Drama List: ");
+
+            panel = new JPanel();
+            panel.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
+            panel.setLayout(new GridLayout(0, 1));
+
+            panel.add(label);
+
+            back.addActionListener(this);
+            panel.add(back);
+
+            frame.add(panel, BorderLayout.CENTER);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setTitle("Anime/Drama Log");
+            frame.pack();
+            frame.setVisible(true);
+        }
+
+        else if (e.getSource() == addAnime) {
+            frame.setVisible(false);
+            frame = new JFrame();
+
+            label = new JLabel("Add Anime");
+
+            panel = new JPanel();
+            panel.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
+            panel.setLayout(new GridLayout(0, 1));
+
+            panel.add(label);
+
+            back.addActionListener(this);
+            panel.add(back);
+
+            frame.add(panel, BorderLayout.CENTER);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setTitle("Anime/Drama Log");
+            frame.pack();
+            frame.setVisible(true);
+        }
+
+        else if (e.getSource() == addDrama) {
+            frame.setVisible(false);
+            frame = new JFrame();
+
+            label = new JLabel("Add Drama");
+
+            panel = new JPanel();
+            panel.setBorder(BorderFactory.createEmptyBorder(100, 100, 100, 100));
+            panel.setLayout(new GridLayout(0, 1));
+
+            panel.add(label);
+
+            back.addActionListener(this);
+            panel.add(back);
+
+            frame.add(panel, BorderLayout.CENTER);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setTitle("Anime/Drama Log");
+            frame.pack();
+            frame.setVisible(true);
+        }
+
+        else if (e.getSource() == back) {
+            frame.setVisible(false);
+            new GUI();
+        }
     }
 }
