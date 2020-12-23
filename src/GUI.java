@@ -14,7 +14,11 @@ public class GUI implements ActionListener{
         frame = new JFrame();
         JButton anime_menu = new JButton("Anime");
         JButton drama_menu = new JButton("Dramas");
+
         anime_menu.addActionListener(this);
+        drama_menu.addActionListener(this);
+
+
 
         label = new JLabel("Clicked");
 
@@ -32,9 +36,30 @@ public class GUI implements ActionListener{
         frame.setVisible(true);
     }
 
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        count++;
-        label.setText("Clicked: " + count);
+
+        frame.setVisible(false);
+        frame = new JFrame();
+        JButton show = new JButton("Watched Anime");
+        JButton add = new JButton("Add an anime");
+        show.addActionListener(this);
+
+
+        label = new JLabel("Anime Section");
+
+        panel = new JPanel();
+        panel.setBorder(BorderFactory.createEmptyBorder(30,30,10,30));
+        panel.setLayout(new GridLayout(0,1));
+        panel.add(show);
+        panel.add(add);
+        panel.add(label);
+
+        frame.add(panel, BorderLayout.CENTER);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setTitle("Anime/Drama Log");
+        frame.pack();
+        frame.setVisible(true);
     }
 }
