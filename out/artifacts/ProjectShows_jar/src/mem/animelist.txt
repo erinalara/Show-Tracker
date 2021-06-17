@@ -1,0 +1,19 @@
+Naruto;Action;2002
+Fairy Tail;Action;2009
+Seven Deadly Sins;Action;2018
+Attack On Titan;Action;2012
+Demon Slayer (Kimetsu no Yaiba);Action;2018
+My Hero Academia;Action;2018
+Haikyuu!;Sports;2016
+Tenchi Muyo! War on Geminar;Action;2008
+Jujutsu Kaisen;Action;2020
+Naruto Shippuden;Action;2012
+Kaichou wa Maid Sama;Romance;2012
+Guilty Crown;Sci-Fi;2012
+Zetsuen no Tempest;Fantasy;2012
+Darling in the FRANXX;Sci-Fi;2018
+Inuyasha;Fantasy;2008
+Mirai Nikki;Thriller;2011
+Sword Art Online;Fantasy;2014
+Food Wars!;Comedy;2015
+hello;Angst;2134
